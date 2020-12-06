@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>{% block title %} {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Studio | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section set-bg" data-setbg="/static/images/img/hero-slider/shapka.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="{% url 'home_page' %}">
+                                <span class="tickler-text">WOMEN'S FITNESS </span>
+                            </a>
+                        </div>
+                        <nav class="inner-main-navbar mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'home_page' %}">Главная</a></li>
+                                <li><a href="{% url 'work_page' %}">Тренировки</a></li>
+                                <li><a href="{% url 'about_us_page' %}">О нас</a></li>
+                                <li><a href="./elements.html">Питание</a></li>
+                                <li><a href="{% url 'personal_page' %}">Личный кабинет (<span>{{ user.username }}</span>)</a></li>
+                                {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap">
+                        {% block login %}{% endblock login %}
+                        {% block register %}{% endblock register %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-slider">
+        <div class="slider-items owl-carousel">
+            <div class="single-slider-item set-bg" data-setbg="/static/images/img/777.jpg">
+            </div>
+        </div>
+    </section>
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/circle-progress.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>

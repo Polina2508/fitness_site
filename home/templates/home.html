@@ -1,0 +1,181 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>{% block title %} {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Studio | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section set-bg" data-setbg="/static/images/img/hero-slider/shapka.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="{% url 'home_page' %}">
+                                <span class="tickler-text">WOMEN'S FITNESS </span>
+                            </a>
+                        </div>
+                        <nav class="inner-main-navbar mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'home_page' %}">Главная</a></li>
+                                <li><a href="{% url 'work_page' %}">Тренировки</a></li>
+                                <li><a href="{% url 'about_us_page' %}">О нас</a></li>
+                                <li><a href="./elements.html">Питание</a></li>
+                                <li><a href="{% url 'personal_page' %}">Личный кабинет (<span>{{ user.username }}</span>)</a></li>
+                        
+                                {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Slider Section Begin -->
+    <section class="hero-slider">
+        <div class="slider-items owl-carousel">
+            <div class="single-slider-item set-bg" data-setbg="/static/images/img/fffon2.jpg">
+                <div class="container">
+                    <h2>ТВОЙ ЛИЧНЫЙ ТРЕНЕР<br></br></h2>
+                    <p><b>Разработана лучшими тренерами, нутрициологами, психологами и лайф коучами<br></br>WOMEN'S FITNESS дает научные знания в области физиологии и психологии человека, а также практические рекомендации и специальные инструменты для их внедрения в лайфстайл<br></br>Миссия проекта — помогать жить осознанно, повышать качество жизни и наполнять каждый день положительной энергией..</b></p>
+                    <a href="{% url 'register_page' %}" class="primary-btn">Зарегестрироваться</a>  
+                </div>
+            </div>
+            <div class="single-slider-item set-bg" data-setbg="/static/images/img/fffon3.jpg">
+                <div class="container">
+                    <h1></h1>
+                    <p><b>WOMEN'S FITNESS предлагает программы тренировок для разных уровней подготовки<br></br>Проходи разнообразные тренировки и улучшай здоровье и качество тела.<br></br>Анализируй результаты и сохраняй мотивацию.</b></p>    
+                    <a href="#" class="primary-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Slider Section End -->
+
+    <!-- Yoga Classes Section Begin -->
+    <div class="single-slider-item set-bg" data-setbg="/static/images/img/ffffon1.png">
+    <section class="yoga-classes-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="home-title">
+                        <span class="tickler-text">WOMEN'S FITNESS </span>
+                        <h2>Фитнес платформа WOMEN'S FITNESS содержит огромное количество тренировок по таким направлением, как:</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="single-classes">
+                        <i class="flaticon-002-yin-yang"></i>
+                        <h3>Силовые Тренировки</h3>
+                        <p>Чаще всего силовыми, или анаэробными, называют тренировки с собственным весом и отягощениями, направленные на увеличение мышечной силы. При этом потребление энергии идет анаэробным путем – за счет мышечного гликогена, без участия кислорода. </p>
+                        <a href="{% url 'work_page' %}" class="primary-btn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-classes">
+                        <i class="flaticon-021-yoga-mat"></i>
+                        <h3>Стретчинг</h3>
+                        <p>Переведено с английского языка.-Растяжение - это форма физических упражнений, при которой конкретная мышца или сухожилие преднамеренно сгибаются или растягиваются, чтобы улучшить чувствительность мышц и достичь комфортного мышечного тонуса.</p>
+                        <a href="{% url 'work_page' %}" class="primary-btn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-classes">
+                        <i class="flaticon-001-meditation"></i>
+                        <h3>Йога</h3>
+                        <p>Йога – это целостное и многогранное учение о познании себя и окружающего мира, имеющее тысячелетнюю историю. В древности она была крайне закрытой системой, поскольку техники и практики  были очень сильными и давали реальное могущество. </p>
+                        <a href="{% url 'work_page' %}" class="primary-btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Yoga Classes Section End -->
+
+    
+
+    <!-- Client Section Begin -->
+    <div class="single-slider-item set-bg" data-setbg="/static/images/img/ffffon3.png">
+    <section class="client-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="client-left-img">
+                        <img src="/static/images/img/11.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="client-says">
+                        <div class="section-title">
+                            <span class="tickler-text">WOMEN'S FITNESS </span>
+                            <h2>Что наши пользователи говорят о нас</h2>
+                        </div>
+                        <div class="client-items owl-carousel">
+                            <div class="single-client-item">
+                                <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. “True meditation is about being fully present with everything that is–including discomfort and challenges. It is not an escape from life.</p>
+                                <h5>Катя, <span>Client</span></h5>
+                            </div>
+                            <div class="single-client-item">
+                                <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. “True meditation is about being fully present with everything that is–including discomfort and challenges. It is not an escape from life.</p>
+                                <h5>Оля, <span>Client</span></h5>
+                            </div>
+                            <div class="single-client-item">
+                                <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. “True meditation is about being fully present with everything that is–including discomfort and challenges. It is not an escape from life.</p>
+                                <h5>Маша, <span>Client</span></h5>
+                            </div>
+                            <div class="single-client-item">
+                                <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. “True meditation is about being fully present with everything that is–including discomfort and challenges. It is not an escape from life.</p>
+                                <h5>Таня, <span>Client</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+
+    
+    <!-- Js Plugins -->
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/circle-progress.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>

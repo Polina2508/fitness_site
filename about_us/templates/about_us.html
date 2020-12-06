@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>{% block title %} {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Studio | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section set-bg" data-setbg="/static/images/img/hero-slider/shapka.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="{% url 'home_page' %}">
+                                <span class="tickler-text">WOMEN'S FITNESS </span>
+                                {% comment %} <img src="/static/images/img/image (10).png" alt=""> {% endcomment %}
+                            </a>
+                        </div>
+                        <nav class="inner-main-navbar mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'home_page' %}">Главная</a></li>
+                                <li><a href="{% url 'work_page' %}">Тренировки</a></li>
+                                <li><a href="{% url 'about_us_page' %}">О нас</a></li>
+                                <li><a href="./elements.html">Питание</a></li>
+                                <li><a href="{% url 'personal_page' %}">Личный кабинет (<span>{{ user.username }}</span>)</a></li>
+                                
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Single Section Begin -->
+    <section class="hero-single set-bg spad" data-setbg="/static/images/img/777.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="hero-item">
+                        <span class="tickler-text">Who we are</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Single Section End -->
+
+    <!-- About Us Section Begin -->
+    <section class="about_us spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-lt">
+                        <div class="section-title">
+                            <span class="tickler-text">WOMEN'S FITNESS </span>
+                            <h2>The very heart of yoga </h2>
+                        </div>
+                        <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. enean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. In arcu justo, sagittis consequat pulvinar quis, pretium quis massa. Vestibulum nec nibh eu nisi rutrum iaculis. Pellentesque placerat sit amet leo in vestibulum. Suspendisse quam neque, rutrum vel scelerisque</p>
+                        <a href="#" class="primary-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="about-img">
+                        <img src="/static/images/img/888.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us section End -->
+
+
+    <!-- About Counter Begin -->
+    {% comment %} <div class="about-counter set-bg spad" data-setbg="/static/images/img/blog-3.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="single-counter">
+                        <i class="flaticon-001-meditation"></i>
+                        <span class="counter-num counter">325</span>
+                        <span>Active members</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="single-counter">
+                        <i class="flaticon-011-hamsa"></i>
+                        <span class="counter-num counter">7</span>
+                        <span>Instructors</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="single-counter">
+                        <i class="flaticon-010-chakra"></i>
+                        <span class="counter-num counter">49</span>
+                        <strong>k</strong>
+                        <span>Ig follovers</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="single-counter">
+                        <i class="flaticon-009-yoga-1"></i>
+                        <span class="counter-num counter">15</span>
+                        <span>Awards won</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    <!-- About Counter End -->
+
+    
+    <!-- About Call To Action Begin -->
+    <section class="about-callto-action set-bg" data-setbg="/static/images/img/777.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="about-call-to-text">
+                        <h2>Begginers class start this month</h2>
+                        <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. enean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. In arcu justo,</p>
+                        <a href="#" class="primary-btn about-callto-btn">Join now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Call To Action End -->
+
+
+    
+    <!-- Js Plugins -->
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/circle-progress.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>

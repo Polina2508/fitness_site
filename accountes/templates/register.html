@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block login %}
+<div class="pt-5 mp-5">   
+<h3>Регистрация </h3>
+<p>У вас уже есть аккаунт?<a href="{% url 'log_page' %}" class= "m1-m2">Войдите</a> </p>
+
+   <form method="POST" action="">
+   {% csrf_token %}
+        <p> {{form.username.label}}
+         {{form.username}}</p>
+
+        <p> {{form.email.label}}
+         {{form.email}}</p>
+
+        <p> {{form.password1.label}}
+         {{form.password1}}</p>
+
+        <p> {{form.password2.label}}
+         {{form.password2}}</p>
+
+
+  
+    <input class="primary-btn" type="submit" value="Зарегистрироваться">
+</form>
+
+{{form.errors}}
+
+
+
+{% endblock login %}
+
+
+
+
+
+
+
+
+
+   {% comment %} {% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ movie.title }} {% endblock title %}
+{% block container %}
+    <div class="container py-md-3">
+{% endblock container %}
+
+{% block sidebar %}
+    <div class="side-bar col-lg-4">
+{% endblock sidebar %}
+{% block movie %}
+<div class="left-ads-display col-lg-8">
+    <div class="row">
+        <form method="post">{% csrf_token %}
+            {{form.as_p}}
+            <button type="submit"class="mt-3 btn btn-success btn-block py-3">
+                Регистрация
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock movie %} {% endcomment %}

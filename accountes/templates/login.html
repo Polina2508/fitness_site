@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block login %}
+<div class="pt-5 mp-5">
+<h3>Вход </h3>
+<p>У вас еще нет аккаунта?<a href="{% url 'register_page' %}" class= "m1-m2">Зарегестрируйтесь</a> </p>
+
+        <form method="POST" action="">
+        {% csrf_token %}
+            <p> {{form.username.label}}
+                {{form.username}}</p>
+
+            <p> {{form.password.label}}
+                {{form.password}}</p>
+
+            <input class="primary-btn" type="submit" value="Войти">
+
+        </form>
+{{form.errors}}
+{% endblock login %}
+
+    {% comment %} {% for message in messages%}
+            <p id="messages">{{message}}</p>
+    {% endfor %}
+    <div>
+            <a href="{% url 'register_page' %}" class= "m1-m2">Sing up</a>
+    </div>
+    <div>
+            {% comment %} <a href="{% url 'password_reset' %}" class= "m1-m2">Reset your password</a> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
