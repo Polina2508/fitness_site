@@ -48,7 +48,7 @@
                                 <li><a href="{% url 'work_page' %}">Тренировки</a></li>
                                 <li><a href="{% url 'about_us_page' %}">О нас</a></li>
                                 <li><a href="./elements.html">Питание</a></li>
-                                <li><a href="{% url 'personal_page' %}">Личный кабинет (<span>{{ user.username }}</span>)</a></li>
+                                <li><a href="{% url 'add_review' %}">Личный кабинет <span>{{ user.username }}</span></a></li>
                         
                                 {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
                             </ul>
@@ -64,18 +64,18 @@
     <!-- Hero Slider Section Begin -->
     <section class="hero-slider">
         <div class="slider-items owl-carousel">
-            <div class="single-slider-item set-bg" data-setbg="/static/images/img/fffon2.jpg">
+            <div class="single-slider-item set-bg" data-setbg="/static/images/img/fffon3.jpg">
                 <div class="container">
                     <h2>ТВОЙ ЛИЧНЫЙ ТРЕНЕР<br></br></h2>
                     <p><b>Разработана лучшими тренерами, нутрициологами, психологами и лайф коучами<br></br>WOMEN'S FITNESS дает научные знания в области физиологии и психологии человека, а также практические рекомендации и специальные инструменты для их внедрения в лайфстайл<br></br>Миссия проекта — помогать жить осознанно, повышать качество жизни и наполнять каждый день положительной энергией..</b></p>
                     <a href="{% url 'register_page' %}" class="primary-btn">Зарегестрироваться</a>  
                 </div>
             </div>
-            <div class="single-slider-item set-bg" data-setbg="/static/images/img/fffon3.jpg">
+            <div class="single-slider-item set-bg" data-setbg="/static/images/img/fffon2.jpg">
                 <div class="container">
                     <h1></h1>
                     <p><b>WOMEN'S FITNESS предлагает программы тренировок для разных уровней подготовки<br></br>Проходи разнообразные тренировки и улучшай здоровье и качество тела.<br></br>Анализируй результаты и сохраняй мотивацию.</b></p>    
-                    <a href="#" class="primary-btn">Подробнее</a>
+                    <a href="{% url 'about_us_page' %}" class="primary-btn">Подробнее</a>
                 </div>
             </div>
         </div>

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'workout',
     'accountes',
     'yoga',
+    'comments',
     'stretching',
     'about_us',
     'django.contrib.admin',

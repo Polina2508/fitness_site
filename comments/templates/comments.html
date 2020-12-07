@@ -1,22 +1,7 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block login %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-<div id="content">
-    {% block content %} {% endblock %}
-   <span> Hello  {{request.user}}</span> 
-<span><a href="{% url 'logout_page' %}">Log out</a></span>
-</div>
-
-{% endblock login %}
 {% if user.is_authenticated %}
-                
-                <h2>Выбери направление тренировки, которое тебе нужно!</h2>
-                <form autocomplete="on" action="{% url 'add_review' movie.id %}" method="post" class="mt-4">
+                <form autocomplete="on" action="{% url 'add_review' trenya.id %}" method="post" class="mt-4">
                     {% csrf_token %}
                     <div class="form-group editContent">
                         <label for="contactcomment" class="editContent">
@@ -46,7 +31,7 @@
                    </button>
                 </form>
                 {% else %}
-                <form autocomplete="on" action="{% url 'add_review' movie.id %}" method="post" class="mt-4">
+                <form autocomplete="on" action="{% url 'add_review' trenya.id %}" method="post" class="mt-4">
                     {% csrf_token %}
                     <div class="form-group editContent">
                         <label for="contactcomment" class="editContent">
@@ -76,7 +61,4 @@
                    </button>
                 </form>
                 {% endif %}
-
-
-</body>
-</html>
+{% endblock login %}
