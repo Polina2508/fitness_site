@@ -6,6 +6,5 @@ from . import views
 
 
 urlpatterns = [
-    path("<int:pk>", views.AddReview.as_view(), name="add_review"),
-    
+    path('', views.AddReview.as_view(), name='add_review'),
 ]

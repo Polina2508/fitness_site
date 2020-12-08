@@ -1,26 +1,89 @@
-{% extends "base.html" %}
-{% block login %}
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="zxx">
 <head>
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-<div id="content">
-    {% block content %} {% endblock %}
-   <span> Hello  {{request.user}}</span> 
-<span><a href="{% url 'logout_page' %}">Log out</a></span>
-</div>
+    <title>{% block titles %} {% endblock titles %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Studio | Template</title>
 
-{% endblock login %}
-{% if user.is_authenticated %}
-                
-                <h2>Выбери направление тренировки, которое тебе нужно!</h2>
-                <form autocomplete="on" action="{% url 'add_review' movie.id %}" method="post" class="mt-4">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section set-bg" data-setbg="/static/images/img/hero-slider/shapka.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="{% url 'home_page' %}">
+                                <span class="tickler-text">WOMEN'S FITNESS </span>
+                            </a>
+                        </div>
+                        <nav class="inner-main-navbar mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'home_page' %}">Главная</a></li>
+                                <li><a href="{% url 'work_page' %}">Тренировки</a></li>
+                                <li><a href="{% url 'about_us_page' %}">О нас</a></li>
+                                <li><a href="./elements.html">Питание</a></li>
+                                <li><a href="{% url 'personal_page' %}">Личный кабинет <span>{{ user.username }}</span></a></li>
+                        
+                                {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</head>
+    <section class="hero-slider">
+        <div class="slider-items owl-carousel">
+            <div class="single-slider-item set-bg" data-setbg="/static/images/img/1011.jpg">
+
+
+            {% block logins %}
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>{% block title %}{% endblock %}</title>
+            </head>
+            <body>
+            <div id="content">
+                {% block content %} {% endblock %}
+                <span>Привет, {{request.user}}</span> 
+            <span><a href="{% url 'logout_page' %}">Выйти изучетной записи</a></span>
+            </div>
+            {% endblock logins %}
+
+
+                {% if user.is_authenticated %}
+                <form autocomplete="on" action="{% url 'add_review'  %}" method="post" class="mt-4">
                     {% csrf_token %}
                     <div class="form-group editContent">
                         <label for="contactcomment" class="editContent">
-                            Ваш комментарий *
+                            Оставить комментарий *
                         </label>
                         <textarea class="form-control border" rows="5" name="text"
                                   id="contactcomment" required=""></textarea>
@@ -46,7 +109,7 @@
                    </button>
                 </form>
                 {% else %}
-                <form autocomplete="on" action="{% url 'add_review' movie.id %}" method="post" class="mt-4">
+                <form autocomplete="on" action="{% url 'add_review' %}" method="post" class="mt-4">
                     {% csrf_token %}
                     <div class="form-group editContent">
                         <label for="contactcomment" class="editContent">
@@ -76,7 +139,18 @@
                    </button>
                 </form>
                 {% endif %}
+            </div>
+        </div>
+    </section>
 
 
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/circle-progress.min.js"></script>
+    <script src="/static/js/main.js"></script>
 </body>
+
 </html>
