@@ -47,7 +47,26 @@
                                 <li><a href="{% url 'work_page' %}">Тренировки</a></li>
                                 <li><a href="{% url 'about_us_page' %}">О нас</a></li>
                                 <li><a href="./elements.html">Питание</a></li>
-                                <li><a href="{% url 'personal_page' %}">Личный кабинет (<span>{{ user.username }}</span>)</a></li>
+                                {% if user.is_authenticated %}
+                                <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn">{{ user.username }}</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="{% url 'personal_page' %}">Написать отзвыв</a>
+                                    <a href="#">Выполненные тренировки</a>
+                                    <a href="#">Желаемые тренировки</a>
+                                </div>
+                                </div>
+                                <li> 
+                                {% comment %} <span><a href="{% url 'personal_page' %}">{{ user.username }}</a></span> {% endcomment %}
+                                <a href="{% url 'logout_page' %}">
+                                Выход</a></li>
+                                <li>{% else %}
+                                <a href="{% url 'log_page' %}">Вход</a>
+                                <a href="{% url 'register_page' %}">Регистрация</a>
+                                {% endif %}</li>
+                                {% comment %} <li><a href="{% url 'register_page' %}">Регистрация</a></li>
+                                <li><a href="{% url 'personal_page' %}"><span>{{ user.username }}</span></a></li>
+                         {% endcomment %}
                                 {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
                             </ul>
                         </nav>
@@ -61,41 +80,34 @@
 
     <!-- Hero Slider Section Begin -->
     {% comment %} <div class="card card-body"> {% endcomment %}
+    
     <section class="hero-slider">
         <div class="slider-items owl-carousel">
+        {% for trenirovki in trenirovka  %}
             <div class="single-slider-item set-bg" data-setbg="/static/images/img/555.jpg">
                 <div class="container">
-                <p></p>
-                    </p>
                         <div class="card" style="color:#A52A2A;">
-                        <h2>Тренировка №1</h2>
+                        <h2>{{trenirovki.title}}</h2>
+                        <h2>{{trenirovki.description}}</h2>
                         <p class="mt-3 italic-blue editContent"
                         style="outline: none; cursor: inherit;">
                         
                         <iframe width="700" height="500" src="https://www.youtube.com/embed/JvOIoTgR0tY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    </p>
+                        <form action="{% url 'add_desired' trenirovki.id %}" method="POST" class="mt-4">
+                            {% csrf_token %}
+                            <button type="submit"class="primary-btn">
+                                Выполнено
+                            </button>
+                        </form>
                 </div>
                 </div>
             </div>
-            <div class="single-slider-item set-bg" data-setbg="/static/images/img/555.jpg">
-                <div class="container">
-                {% comment %} <h1><small>
-                <div class="card">Йога. Тренировка №2</div></small></h1> {% endcomment %}
-                    {% comment %} <div class="card" style= "width: 70rem;"> {% endcomment %}
-                    </p>
-                        <div class="card">
-                        <h2>Тренировка №2</h2>
-                        <p class="mt-3 italic-blue editContent"
-                        style="outline: none; cursor: inherit;">
-                        <iframe width="700" height="500" src="https://www.youtube.com/embed/TbHqQGIpkiw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        
-                        <a href="#" class="primary-btn">Выполнено!</a>
-                    </p>    
-                </div>
-            </div>
+            
+            {% endfor  %}
           </div>
+          
     </section>
+   
     </div>
     <!-- Hero Slider Section End -->
 
@@ -110,6 +122,6 @@
     <script src="/static/js/owl.carousel.min.js"></script>
     <script src="/static/js/circle-progress.min.js"></script>
     <script src="/static/js/main.js"></script>
-</body>
+    <script src="/static/js/dropdown.js"></script>
 
 </html>

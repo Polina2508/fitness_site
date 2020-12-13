@@ -8,6 +8,8 @@ urlpatterns = [
     path('register/', views.register, name='register_page'),
     path('login/', views.user_login, name='log_page'),
     path('logout/', views.user_logout, name='logout_page'),
+    # path("", views.workouts_done_page, name="workouts_done_page"),
+    path("", views.TrenirovkaViewDesired.as_view(), name="workouts_done_page"),
 ]
 
 #     path('reset_password/', views.PasswordResetView.as_view(), name='password_reset'),

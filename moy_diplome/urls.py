@@ -15,7 +15,7 @@ urlpatterns = [
     path("about_us/", include("about_us.urls")),
     path('i18n/', include('django.conf.urls.i18n')),
     path('account/', include('django.contrib.auth.urls')),
-    path("comments/", include("comments.urls")),
+    path("", include("trenirovka.urls")),
 
     path("", lambda request: redirect("/home/")),
 ]

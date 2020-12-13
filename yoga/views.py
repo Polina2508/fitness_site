@@ -5,5 +5,4 @@ from django.http import HttpResponseRedirect
 
 
 def yoga_page(request):
-    
     return render(request, template_name="yoga.html", context={})

@@ -47,7 +47,26 @@
                                 <li><a href="{% url 'work_page' %}">Тренировки</a></li>
                                 <li><a href="{% url 'about_us_page' %}">О нас</a></li>
                                 <li><a href="./elements.html">Питание</a></li>
-                                <li><a href="{% url 'personal_page' %}">Личный кабинет (<span>{{ user.username }}</span>)</a></li>
+                                {% if user.is_authenticated %}
+                                <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn">{{ user.username }}</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="{% url 'personal_page' %}">Написать отзвыв</a>
+                                    <a href="#">Выполненные тренировки</a>
+                                    <a href="#">Желаемые тренировки</a>
+                                </div>
+                                </div>
+                                <li> 
+                                {% comment %} <span><a href="{% url 'personal_page' %}">{{ user.username }}</a></span> {% endcomment %}
+                                <a href="{% url 'logout_page' %}">
+                                Выход</a></li>
+                                <li>{% else %}
+                                <a href="{% url 'log_page' %}">Вход</a>
+                                <a href="{% url 'register_page' %}">Регистрация</a>
+                                {% endif %}</li>
+                                {% comment %} <li><a href="{% url 'register_page' %}">Регистрация</a></li>
+                                <li><a href="{% url 'personal_page' %}"><span>{{ user.username }}</span></a></li>
+                         {% endcomment %}
                                 {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
                             </ul>
                         </nav>
@@ -71,9 +90,7 @@
                         <h2>Тренировка №1</h2>
                         <p class="mt-3 italic-blue editContent"
                         style="outline: none; cursor: inherit;">
-                        
                         <iframe width="700" height="500" src="https://www.youtube.com/embed/IWEI01lxPR0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <a href="#" class="primary-btn">Выполнено!</a>
                     </p>
                     <p><b></b></p>
                 </div>
@@ -99,7 +116,6 @@
                         <a href="#" class="primary-btn">Выполнено!</a>
                         </div>
                     </p>
-
                     <p><b></b></p>    
                    
                     <p><b></b></p>

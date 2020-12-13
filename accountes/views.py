@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-# from django.urls import reverse_lazy
+from django.views.generic.base import View
 
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
@@ -8,6 +8,13 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators   import login_required
 from .forms import UserRgisterForm, UserLoginForm
+
+
+class TrenirovkaViewDesired(View):
+    
+    def get(self, request):
+        tren = request.user.desired.all()
+        return render(request, template_name="workouts_done.html", context={"tren":tren})
 
 
 def register(request):
@@ -98,3 +105,9 @@ def user_logout(request):
 
 # def changed_password_message(request):
 #     return render(request, 'changed_password_message.html')
+
+
+# def workouts_done_page(request):
+#     return render(request, template_name="workouts_done.html", context={})
+
+
