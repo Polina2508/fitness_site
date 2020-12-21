@@ -1,35 +1,97 @@
-{% extends 'base.html' %}
-{% block login %}
-<div class="pt-5 mp-5">   
-<h3>Регистрация </h3>
-<p>У вас уже есть аккаунт?<a href="{% url 'log_page' %}" class= "m1-m2">Войдите</a> </p>
-
-   <form method="POST" action="">
-   {% csrf_token %}
-        <p> {{form.username.label}}
-         {{form.username}}</p>
-
-        <p> {{form.email.label}}
-         {{form.email}}</p>
-
-        <p> {{form.password1.label}}
-         {{form.password1}}</p>
-
-        <p> {{form.password2.label}}
-         {{form.password2}}</p>
 
 
-  
-    <input class="primary-btn" type="submit" value="Зарегистрироваться">
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
 
-{{form.errors}}
+<head>
+    <title>{% block title %} {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Studio | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    {% include "header.html" %}
+    <!-- Header End -->
+
+    <section class="hero-single set-bg spad" data-setbg="/static/images/img/44.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-lt">
+                        <div class="section-title">
+                        {% block login %}
+                        <div class="pt-5 mp-5">   
+                        <h3>Регистрация </h3>
+                        <p>У вас уже есть аккаунт?<a href="{% url 'log_page' %}" class= "m1-m2">Войдите</a> </p>
+
+                        <form method="POST" action="">
+                        {% csrf_token %}
+                                <p> {{form.username.label}}
+                                {{form.username}}</p>
+
+                                <p> {{form.email.label}}
+                                {{form.email}}</p>
+
+                                <p> {{form.password1.label}}
+                                {{form.password1}}</p>
+
+                                <p> {{form.password2.label}}
+                                {{form.password2}}</p>
+
+
+                        
+                            <input class="primary-btn" type="submit" value="Зарегистрироваться">
+                        </form>
+
+                        {{form.errors}}
 
 
 
-{% endblock login %}
+                        {% endblock login %}
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="about-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/circle-progress.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/dropdown.js"></script>
+</body>
 
+</html>
 
 
 

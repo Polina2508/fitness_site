@@ -11,6 +11,9 @@ from .forms import ReviewForm
 def home_page(request):
     return render(request, template_name="home.html", context={})
 
+def food_page(request):
+    return render(request, template_name="food.html", context={})
+
 
 class AddReview(View):
 
@@ -26,4 +29,5 @@ class ReviewView(View):
     def get(self, request):
         review = Reviews.objects.all()
         return render(request, template_name="home.html", context={"review":review})
+
 

@@ -29,55 +29,9 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section set-bg" data-setbg="/static/images/img/hero-slider/shapka.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="main-menu">
-                        <div class="logo">
-                            <a href="{% url 'home_page' %}">
-                                <span class="tickler-text">WOMEN'S FITNESS </span>
-                            </a>
-                        </div>
-                        <nav class="inner-main-navbar mobile-menu">
-                            <ul>
-                                <li><a href="{% url 'home_page' %}">Главная</a></li>
-                                <li><a href="{% url 'work_page' %}">Тренировки</a></li>
-                                <li><a href="{% url 'about_us_page' %}">О нас</a></li>
-                                <li><a href="./elements.html">Питание</a></li>
-                                {% if user.is_authenticated %}
-                                <div class="dropdown">
-                                <button onclick="myFunction()" class="dropbtn">{{ user.username }}</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <a href="{% url 'personal_page' %}">Написать отзвыв</a>
-                                    <a href="#">Выполненные тренировки</a>
-                                    <a href="#">Желаемые тренировки</a>
-                                </div>
-                                </div>
-                                <li> 
-                                {% comment %} <span><a href="{% url 'personal_page' %}">{{ user.username }}</a></span> {% endcomment %}
-                                <a href="{% url 'logout_page' %}">
-                                Выход</a></li>
-                                <li>{% else %}
-                                <a href="{% url 'log_page' %}">Вход</a>
-                                <a href="{% url 'register_page' %}">Регистрация</a>
-                                {% endif %}</li>
-                                {% comment %} <li><a href="{% url 'register_page' %}">Регистрация</a></li>
-                                <li><a href="{% url 'personal_page' %}"><span>{{ user.username }}</span></a></li>
-                         {% endcomment %}
-                                {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
-                            </ul>
-                        </nav>
-                        <div id="mobile-menu-wrap"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
-
+    
+    {% include "header.html" %}
+    
     <section class="hero-single set-bg spad" data-setbg="/static/images/img/1012.jpg">
         <div class="container">
             <div class="row">
@@ -88,7 +42,11 @@
                             <h2>Что предствляет из себя наша платформа?</h2>
                         </div>
                         <p>Aenean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. enean quis velit pulvinar, pellentesque neque vel, laoreet orci. Suspendisse potenti. Donec congue vel justo eget malesuada. In arcu justo, sagittis consequat pulvinar quis, pretium quis massa. Vestibulum nec nibh eu nisi rutrum iaculis. Pellentesque placerat sit amet leo in vestibulum. Suspendisse quam neque, rutrum vel scelerisque</p>
+                        {% if user.is_authenticated %}
+
+                        {% else %}
                         <a href="{% url 'register_page' %}" class="primary-btn">Зарегестрироваться</a>
+                        {%  endif %}
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1">

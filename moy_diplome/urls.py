@@ -9,13 +9,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("home/", include("home.urls")),
     path("workout/", include("workout.urls")),
-    path("yoga/", include("yoga.urls")),
     path("accounts/", include("accountes.urls")),
-    path("stretching/", include("stretching.urls")),
+    # path("stretching/", include("stretching.urls")),
     path("about_us/", include("about_us.urls")),
     path('i18n/', include('django.conf.urls.i18n')),
     path('account/', include('django.contrib.auth.urls')),
     path("", include("trenirovka.urls")),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("", include("home.urls")),
 
     path("", lambda request: redirect("/home/")),
 ]

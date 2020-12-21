@@ -16,6 +16,13 @@ class TrenirovkaViewDesired(View):
         tren = request.user.desired.all()
         return render(request, template_name="workouts_done.html", context={"tren":tren})
 
+    
+class YogaViewDesired(View):
+    
+    def get(self, request):
+        yoga = request.user.desired.all()
+        return render(request, template_name="workouts_done.html", context={"yoga":yoga})
+
 
 def register(request):
     if request.method == "POST":

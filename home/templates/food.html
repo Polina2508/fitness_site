@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>{% block title %} {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Studio | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    {% include "header.html" %}
+
+
+    
+<div class="single-slider-item set-bg" data-setbg="/static/images/img/www.png">
+ <section class="about-team spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <span>В этом разделе представлен рацион здорового питания на неделю!</span>
+                        <h2></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/7777.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Pilates instructor</span>
+                            <h4>Понедельник</h4>
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-one" type="checkbox" name="tabs">
+                                <label for="tab-one">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: овсяная каша на разбавленном молоке, чай без сахара
+
+                                        <br></br><b>Обед</b>: куриная грудка тушеная или отварная, гречка рассыпчатая
+
+                                        <br></br><b>Полдник</b>: яблоко, стакан йогурта без добавок
+
+                                        <br></br><b>Ужин</b>: омлет из 2 яиц и молока с овощами и зеленью</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/8888.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Pilates instructor</span>
+                            <h4>Вторник</h4>  
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-two" type="checkbox" name="tabs">
+                                <label for="tab-two">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: сырники творожные со сметаной, кофе без сахара
+
+                                        <br></br><b>Обед</b>: запеченная белая рыба с томатами, бурый рис
+
+                                        <br></br><b>Полдник</b>: фруктовый салат с йогуртовой заправкой
+
+                                        <br></br><b>Ужин</b>: вареное яйцо, грейпфрут или апельсин</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/9999.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Yoga teacher</span>
+                            <h4>Среда</h4>
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-three" type="checkbox" name="tabs">
+                                <label for="tab-three">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: фруктовый салат с йогуртовой заправкой, стакан ряженки
+
+                                        <br></br><b>Обед</b>: капуста цветная и брокколи на пару, отварная говядина
+
+                                        <br></br><b>Полдник</b>: яблоко, стакан кефира без добавок
+
+                                        <br></br><b>Ужин</b>: куриная грудка тушеная или отварная, овощной салат</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+                <div class="section-title">
+                        <span></span>
+                        <h2></h2>
+                </div>
+                <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/101010.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Yoga master</span>
+                            <h4>Четверг</h4>
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-four" type="checkbox" name="tabs">
+                                <label for="tab-four">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: омлет из 2 яиц и молока с овощами и зеленью
+
+                                        <br></br><b>Обед</b>: суп овощной, куриная грудка
+
+                                        <br></br><b>Полдник</b>: фруктовый салат с йогуртовой заправкой
+
+                                        <br></br><b>Ужин</b>: запеченная белая рыба с томатами, бурый рис</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/131313.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Pilates instructor</span>
+                            <h4>Пятница</h4>
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-five" type="checkbox" name="tabs">
+                                <label for="tab-five">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: овсяная каша на разбавленном молоке, чай без сахара
+
+                                        <br></br><b>Обед</b>: тушеная капуста, помидор, отварная говядина
+
+                                        <br></br><b>Полдник</b>: вареное яйцо, грейпфрут или апельсин
+
+                                        <br></br><b>Ужин</b>: творог обезжиренный с медом</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/121212.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Yoga teacher</span>
+                            <h4>Суббота</h4>
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-six" type="checkbox" name="tabs">
+                                <label for="tab-six">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: каша мультизлаковая или мюсли без сахара, кофе
+
+                                        <br></br><b>Обед</b>: легкий суп с фрикадельками
+
+                                        <br></br><b>Полдник</b>: фруктовый салат с йогуртовой заправкой
+
+                                        <br></br><b>Ужин</b>: фасоль зеленая стручковая, тушеная с морковью говядина</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-team-member">
+                        <div class="team-pic">
+                            <img src="/static/images/img/141414.jpg" alt="">
+                        </div>
+                        <div class="team-text">
+                            <span>Yoga teacher</span>
+                            <h4>Воскресение</h4>
+                        </div>
+                            <div class="wrapper">
+                            <div class="half">
+                                <p><strong></strong></p>
+                                <div class="tab">
+                                <input id="tab-seven" type="checkbox" name="tabs">
+                                <label for="tab-seven">Узнать рацион</label>
+                                <div class="tab-content">
+                                    <p>
+                                        <b>Завтрак</b>: пшенная каша на разбавленном молоке, чай без сахара
+
+                                        <br></br><b>Обед</b>: тушеная капуста, помидор, отварная телятина
+
+                                        <br></br><b>Полдник</b>: яблоко, стакан йогурта без добавок
+
+                                        <br></br><b>Ужин</b>: сырники творожные со сметаной, чай без сахара</p>
+                                </div>
+                                </div>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+
+            </div>
+        
+           
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/circle-progress.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/dropdown.js"></script>
+</body>
+
+</html>

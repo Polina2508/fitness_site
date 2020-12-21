@@ -1,8 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-    <title>{% block titles %} {% endblock titles %}</title>
+    <title>{% block title %} {% endblock title %}</title>
     <meta charset="UTF-8">
     <meta name="description" content="Yoga Studio Template">
     <meta name="keywords" content="Yoga, unica, creative, html">
@@ -30,62 +31,22 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section set-bg" data-setbg="/static/images/img/hero-slider/shapka.jpg">
+    {% include "header.html" %}
+    <!-- Header End -->
+
+    <section class="hero-single set-bg spad" data-setbg="/static/images/img/ffffon1.png">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="main-menu">
-                        <div class="logo">
-                            <a href="{% url 'home_page' %}">
-                                <span class="tickler-text">WOMEN'S FITNESS </span>
-                            </a>
-                        </div>
-                        <nav class="inner-main-navbar mobile-menu">
-                            <ul>
-                                <li><a href="{% url 'home_page' %}">Главная</a></li>
-                                <li><a href="{% url 'work_page' %}">Тренировки</a></li>
-                                <li><a href="{% url 'about_us_page' %}">О нас</a></li>
-                                <li><a href="./elements.html">Питание</a></li>
-                                {% if user.is_authenticated %}
-                                <div class="dropdown">
-                                <button onclick="myFunction()" class="dropbtn">{{ user.username }}</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <a href="{% url 'personal_page' %}">Написать отзвыв</a>
-                                    <a href="#">Выполненные тренировки</a>
-                                    <a href="#">Желаемые тренировки</a>
-                                </div>
-                                </div>
-                                <li> 
-                                {% comment %} <span><a href="{% url 'personal_page' %}">{{ user.username }}</a></span> {% endcomment %}
-                                <a href="{% url 'logout_page' %}">
-                                Выход</a></li>
-                                <li>{% else %}
-                                <a href="{% url 'log_page' %}">Вход</a>
-                                <a href="{% url 'register_page' %}">Регистрация</a>
-                                {% endif %}</li>
-                                {% comment %} <li><a href="{% url 'register_page' %}">Регистрация</a></li>
-                                <li><a href="{% url 'personal_page' %}"><span>{{ user.username }}</span></a></li>
-                         {% endcomment %}
-                                {% comment %} <li><a href="./contact.html">Contact</a></li> {% endcomment %}
-                            </ul>
-                        </nav>
-                        <div id="mobile-menu-wrap"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-</head>
-    <section class="hero-slider">
-        <div class="slider-items owl-carousel">
-            <div class="single-slider-item set-bg" data-setbg="/static/images/img/1011.jpg">
-
-
-            {% block logins %}
+                <div class="col-lg-6">
+                    <div class="about-lt">
+                        <div class="section-title">
+                            
+                            <h2>
+                            {% block logins %}
             <!DOCTYPE html>
             <html>
             <head>
-                <title>{% block title %}{% endblock %}</title>
+                <title>{% block titles %}{% endblock %}</title>
             </head>
             <body>
             <div id="content">
@@ -94,9 +55,9 @@
             <span><a href="{% url 'logout_page' %}">Выйти изучетной записи</a></span>
             </div>
             {% endblock logins %}
-
-
-                {% if user.is_authenticated %}
+                            </h2>
+                        </div>
+                        <p>{% if user.is_authenticated %}
                 <form autocomplete="on" action="{% url 'add_review'  %}" method="post" class="mt-4">
                     {% csrf_token %}
                     <div class="form-group editContent">
@@ -156,15 +117,19 @@
                         Отправить
                    </button>
                 </form>
-                {% endif %}
+                {% endif %}</p>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="about-img">
+                        <img src="/static/images/img/997" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-        
-
     
-
-
 
     <script src="/static/js/jquery-3.3.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
