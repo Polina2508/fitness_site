@@ -42,14 +42,13 @@ INSTALLED_APPS = [
     'home',
     'workout',
     'accountes',
-    'yoga',
     'about_us',
     'django.contrib.admin',
     'desired',
     'trenirovka',
     'ckeditor',
     'ckeditor_uploader',
-    'categories',
+
     
     
 
